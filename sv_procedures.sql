@@ -92,4 +92,16 @@ BEGIN
 END;
 //
 
+
+-- get opportunities for search
+-- s is the search keyword
+CREATE PROCEDURE getOpportunities (IN s varchar(255))
+BEGIN
+    SELECT title
+    FROM opportunities
+    WHERE title LIKE CONCAT('%', s, '%');
+END;
+//
+
+
 delimiter ;
